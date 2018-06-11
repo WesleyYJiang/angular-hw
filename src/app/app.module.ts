@@ -14,6 +14,8 @@ import { routing } from './app.routing';
 import {FormsModule} from '@angular/forms';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModuleListComponent } from './module-list/module-list.component';
+import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
+import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ModuleListComponent } from './module-list/module-list.component';
     CourseNavigatorComponent,
     CourseGridComponent,
     CourseViewerComponent,
-    ModuleListComponent
+    ModuleListComponent,
+    LessonTabsComponent,
+    LessonTabsComponent
   ],
   imports: [
     BrowserModule,
