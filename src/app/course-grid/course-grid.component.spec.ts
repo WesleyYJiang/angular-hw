@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WhiteBoardComponent } from './white-board.component';
+import { CourseGridComponent } from './course-grid.component';
 
-describe('WhiteBoardComponent', () => {
-  let component: WhiteBoardComponent;
-  let fixture: ComponentFixture<WhiteBoardComponent>;
+describe('CourseGridComponent', () => {
+  let component: CourseGridComponent;
+  let fixture: ComponentFixture<CourseGridComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhiteBoardComponent ]
+      declarations: [ CourseGridComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WhiteBoardComponent);
+    fixture = TestBed.createComponent(CourseGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
