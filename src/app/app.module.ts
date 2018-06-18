@@ -15,7 +15,6 @@ import {FormsModule} from '@angular/forms';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
-import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
     CourseGridComponent,
     CourseViewerComponent,
     ModuleListComponent,
-    LessonTabsComponent,
     LessonTabsComponent
   ],
   imports: [
