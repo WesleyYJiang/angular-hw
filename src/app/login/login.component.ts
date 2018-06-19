@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   username;
   password;
   login(username, password) {
-    console.log([username, password]);
     this.service
       .login(username, password)
       .then(() => {
@@ -20,10 +19,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  constructor(private router: Router,
-              private service: UserServiceClient) { }
+  constructor(private router: Router, private service: UserServiceClient) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
