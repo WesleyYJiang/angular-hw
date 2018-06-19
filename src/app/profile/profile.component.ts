@@ -14,13 +14,28 @@ export class ProfileComponent implements OnInit {
               private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  user = {};
   username;
   password;
+  firstName;
+  lastName;
+  email;
   sections = [];
+  user = {};
 
-  update(user) {
-    console.log(user);
+  setUser() {
+    this.user = {
+      username: this.username,
+      info: {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email
+      }
+    };
+  }
+
+  update() {
+    this.setUser();
+    this.service.update(this.user).then(() => alert('Update complete!'));
   }
 
   logout() {
