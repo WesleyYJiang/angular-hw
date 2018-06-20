@@ -35,7 +35,10 @@ export class ProfileComponent implements OnInit {
   unEnroll(section) {
     this.sectionService
       .unEnrollStudentInSection(section._id)
-      .then(() => { alert('You have unenrolled!'); });
+      .then(() => { alert('You have unenrolled!'); })
+      .then(() => this.sectionService
+        .findSectionsForStudent()
+        .then(sections => this.sections = sections ));
   }
 
   update() {
