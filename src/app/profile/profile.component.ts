@@ -15,7 +15,6 @@ export class ProfileComponent implements OnInit {
               private router: Router) { }
 
   username;
-  password;
   firstName;
   lastName;
   email;
@@ -45,12 +44,16 @@ export class ProfileComponent implements OnInit {
         this.router.navigate(['login']));
 
   }
+  fill(user) {
+    this.username = user.username;
+    this.firstName = user.firstName;
+    this.lastName = user.lastName;
+    this.email = user.email;
+  }
 
   ngOnInit() {
-    this.service
-      .profile()
-      .then(user =>
-        this.username = user.username);
+    this.service.profile()
+      .then(user => this.fill(user));
 
     this.sectionService
       .findSectionsForStudent()
