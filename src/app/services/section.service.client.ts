@@ -3,7 +3,7 @@ export class SectionServiceClient {
   REMOTE_URL = 'https://webdev-node-hw.herokuapp.com/api/course/COURSEID/section';
 
   findSectionsForStudent() {
-    const url = 'http://localhost:4000/api/student/section';
+    const url = 'http://webdev-node-hw.herokuapp.com/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -11,7 +11,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'webdev-node-hw.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -19,12 +19,12 @@ export class SectionServiceClient {
   }
 
   findSectionsForCourse(courseId) {
-    return fetch(this.LOCAL_URL.replace('COURSEID', courseId))
+    return fetch(this.REMOTE_URL.replace('COURSEID', courseId))
       .then(response => response.json());
   }
   createSection(courseId, name, seats) {
     const section = {courseId, name, seats};
-    return fetch(this.LOCAL_URL.replace('COURSEID', courseId), {
+    return fetch(this.REMOTE_URL.replace('COURSEID', courseId), {
       method: 'post',
       body: JSON.stringify(section),
       credentials: 'include',
