@@ -19,8 +19,9 @@
       Profile
     </button>
   </div>
-  <div class="dropdown-divider"></div>
-  <div *ngIf="loggedIn">
+
+  <div *ngIf="notLoggedIn">
+    <div class="dropdown-divider"></div>
     <h3>Currently Enrolled</h3>
     <ul class="list-group">
       <li *ngFor="let enrollment of sections" class="list-group-item">

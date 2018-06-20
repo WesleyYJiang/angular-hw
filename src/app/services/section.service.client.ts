@@ -17,6 +17,14 @@ export class SectionServiceClient {
     });
   }
 
+  unEnrollStudentInSection(sectionId) {
+    const url = 'https://webdev-node-hw.herokuapp.com/api/section/' + sectionId + '/enrollment';
+    return fetch(url, {
+      method: 'delete',
+      credentials: 'include'
+    });
+  }
+
   findSectionsForCourse(courseId) {
     return fetch(this.REMOTE_URL.replace('COURSEID', courseId))
       .then(response => response.json());
