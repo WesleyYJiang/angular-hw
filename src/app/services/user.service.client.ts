@@ -1,12 +1,16 @@
+const remoteURL = 'http://webdev-node-hw.herokuapp.com/api';
+const localURL = 'http://localhost:4000/api/';
+
+
 export class UserServiceClient {
 
   findUserById(userId) {
-    return fetch('http://localhost:4000/api/user/' + userId)
+    return fetch(remoteURL + 'user/' + userId)
       .then(response => response.json());
   }
 
   findUserByUsername(username) {
-    return fetch('http://localhost:4000/api/username/' + username)
+    return fetch(remoteURL + 'username/' + username)
       .then(response => response.json());
   }
 
@@ -15,7 +19,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:4000/api/login', {
+    return fetch(remoteURL + 'login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -26,14 +30,14 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('http://localhost:4000/api/logout', {
+    return fetch(remoteURL + 'logout', {
       method: 'post',
       credentials: 'include'
     });
   }
 
   profile() {
-    return fetch('http://localhost:4000/api/profile',
+    return fetch(remoteURL + 'profile',
       {
         credentials: 'include', // include, same-origin, *omit
       })
@@ -45,7 +49,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:4000/api/user', {
+    return fetch(remoteURL + 'user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
@@ -56,7 +60,7 @@ export class UserServiceClient {
   }
 
   update(user) {
-    return fetch('http://localhost:4000/api/update/user', {
+    return fetch(remoteURL + 'user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
