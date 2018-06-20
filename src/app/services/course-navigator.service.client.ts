@@ -1,24 +1,24 @@
 export class CourseNavigatorServiceClient {
   findAllCourses() {
     return fetch
-    ('http://localhost:8080/api/course')
+    ('https://webdev-hw-wj.herokuapp.com/api/course')
       .then(response => response.json());
   }
   findModulesForCourse(courseId) {
     return fetch
-    ('http://localhost:8080/api/course/'
+    ('https://webdev-hw-wj.herokuapp.com/api/course/'
       + courseId + '/module')
       .then(response => response.json());
   }
   findLessonsForModule(moduleId) {
     return fetch
-    ('http://localhost:8080/api/module/'
+    ('https://webdev-hw-wj.herokuapp.com/api/module/'
       + moduleId + '/lesson')
       .then(response => response.json());
   }
   findWidgetsForLesson(lessonId) {
     return fetch
-    ('http://localhost:8080/api/lesson/'
+    ('https://webdev-hw-wj.herokuapp.com/api/lesson/'
       + lessonId + '/widget')
       .then(response => response.json());
   }
