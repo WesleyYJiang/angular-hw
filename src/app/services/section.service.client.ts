@@ -22,7 +22,6 @@ export class SectionServiceClient {
     return fetch(this.SECTION_URL.replace('COURSEID', courseId))
       .then(response => response.json());
   }
-
   createSection(courseId, name, seats) {
     const section = {courseId, name, seats};
     return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
