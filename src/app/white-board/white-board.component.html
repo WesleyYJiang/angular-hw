@@ -20,17 +20,18 @@
     </button>
   </div>
   <div class="dropdown-divider"></div>
-  <h3>Currently Enrolled</h3>
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
+  <div *ngIf="loggedIn">
+    <h3>Currently Enrolled</h3>
+    <ul class="list-group">
+      <li *ngFor="let enrollment of sections" class="list-group-item">
+        <a routerLink="/course/{{enrollment.section.courseId}}">
+          {{enrollment.section.name}}
+          ({{enrollment.section.seats}} seats available)
+        </a>
+      </li>
+    </ul>
+  </div>
 
-      <a routerLink="/course/{{enrollment.section.courseId}}">
-        {{enrollment.section.name}}
-        ({{enrollment.section.seats}} seats available)
-      </a>
-
-    </li>
-  </ul>
 
   <div class="dropdown-divider"></div>
   <app-course-grid></app-course-grid>
