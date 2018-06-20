@@ -1,4 +1,4 @@
-const remoteURL = 'http://webdev-node-hw.herokuapp.com/api';
+const remoteURL = 'http://webdev-node-hw.herokuapp.com/api/';
 const localURL = 'http://localhost:4000/api/';
 
 

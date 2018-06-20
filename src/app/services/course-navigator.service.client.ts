@@ -1,7 +1,7 @@
 export class CourseNavigatorServiceClient {
   findAllCourses() {
     return fetch
-    ('http://localhost:8080/api/course')
+    ('https://webdev-hw-wj.herokuapp.com/api/course')
       .then(response => response.json());
   }
   findModulesForCourse(courseId) {
