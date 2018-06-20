@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   email;
   sections = [];
   user = {};
+  admin = false;
 
   setUser() {
     this.user = {
@@ -58,6 +59,7 @@ export class ProfileComponent implements OnInit {
     this.firstName = user.firstName;
     this.lastName = user.lastName;
     this.email = user.email;
+    this.admin = user.username === 'admin';
   }
 
   ngOnInit() {
