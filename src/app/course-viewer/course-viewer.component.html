@@ -1,6 +1,23 @@
 <div class="container-fluid">
-  <h2>
-    {{course.title}}
-  </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>
+          {{course.title}}
+        </h2>
+      </div>
+      <div class="col align-content-end">
+        <button routerLink="/profile"
+                class="btn btn-primary btn"
+                *ngIf="loggedIn">
+          Profile
+        </button>
+      </div>
+    </div>
+
+
+
+  </div>
+
   <app-module-list></app-module-list>
 </div>

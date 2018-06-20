@@ -2,15 +2,36 @@
   <h1>White Board</h1>
   <div>
     <button routerLink="/login"
-            class="btn btn-primary btn">
+            class="btn btn-primary btn"
+            *ngIf="loggedIn">
       Login
     </button>
     &nbsp;&nbsp;&nbsp;
     <button routerLink="/register"
-            class="btn btn-success btn">
+            class="btn btn-success btn"
+            *ngIf="loggedIn">
       Register
     </button>
+
+    <button routerLink="/profile"
+            class="btn btn-primary btn"
+            *ngIf="notLoggedIn">
+      Profile
+    </button>
   </div>
+  <div class="dropdown-divider"></div>
+  <h3>Currently Enrolled</h3>
+  <ul class="list-group">
+    <li *ngFor="let enrollment of sections" class="list-group-item">
+
+      <a routerLink="/course/{{enrollment.section.courseId}}">
+        {{enrollment.section.name}}
+        ({{enrollment.section.seats}} seats available)
+      </a>
+
+    </li>
+  </ul>
+
   <div class="dropdown-divider"></div>
   <app-course-grid></app-course-grid>
 </div>

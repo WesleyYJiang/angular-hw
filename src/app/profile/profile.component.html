@@ -47,8 +47,12 @@
 
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
+
+      <a routerLink="/course/{{enrollment.section.courseId}}">
+        {{enrollment.section.name}}
+        ({{enrollment.section.seats}} seats available)
+      </a>
+
     </li>
   </ul>
 
