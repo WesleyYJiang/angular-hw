@@ -3,15 +3,14 @@ export class SectionServiceClient {
   REMOTE_URL = 'https://webdev-node-hw.herokuapp.com/api/course/COURSEID/section';
 
   findSectionsForStudent() {
-    const url = 'http://webdev-node-hw.herokuapp.com/api/student/section';
-    return fetch(url, {
+    return fetch('https://webdev-node-hw.herokuapp.com/api/student/section', {
       credentials: 'include'
     })
       .then(response => response.json());
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'webdev-node-hw.herokuapp.com/api/section/' + sectionId + '/enrollment';
+    const url = 'https://webdev-node-hw.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
