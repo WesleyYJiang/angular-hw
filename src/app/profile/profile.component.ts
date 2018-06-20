@@ -53,7 +53,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.service.profile()
-      .then(user => this.fill(user));
+      .then(user => this.fill(user),
+        () => this.router.navigate(['login']));
 
     this.sectionService
       .findSectionsForStudent()

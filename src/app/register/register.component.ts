@@ -15,13 +15,6 @@ export class RegisterComponent implements OnInit {
   username;
   password;
   password2;
-  validUsername;
-
-  // checkUsername(username) {
-  //   this.service.findUserByUsername(username)
-  //     .then(() => this.validUsername = false,
-  //       () => this.validUsername = true);
-  // }
 
   register(username, password, password2) {
     if (password !== password2) {

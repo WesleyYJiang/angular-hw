@@ -1,14 +1,18 @@
 <div class="container-fluid">
   <h1>Login</h1>
+<div>
+  <label for="username">Username</label>
+  <input [(ngModel)]="username" placeholder="username" class="form-control" id="username"/>
 
-  <input [(ngModel)]="username" placeholder="username" class="form-control"/>
-
-  <input [(ngModel)]="password" placeholder="password" class="form-control"/>
+  <label for="password">Passwrod</label>
+  <input [(ngModel)]="password" placeholder="password" class="form-control" id="password"/>
 
   <button (click)="login(username, password)" class="btn btn-primary btn-block">
     Login
   </button>
+</div>
 
+  <div class="dropdown-divider"></div>
   <a routerLink="/register">Register</a>
   <a routerLink="/home" class="float-right">Home</a>
 </div>

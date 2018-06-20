@@ -1,28 +1,49 @@
 <div class="container-fluid">
   <h1>Profile</h1>
 
-  <input [(ngModel)]="username"
-         placeholder="username"
-         class="form-control"/>
+  <div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input [(ngModel)]="username"
+             placeholder="username"
+             readonly
+             class="form-control"
+             id="username"/>
+    </div>
 
-  <input [(ngModel)]="firstName"
-         placeholder="first name"
-         class="form-control"/>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input [(ngModel)]="firstName"
+             placeholder="first name"
+             class="form-control"
+             id="firstname"/>
+    </div>
 
-  <input [(ngModel)]="lastName"
-         placeholder="lastName"
-         class="form-control"/>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input [(ngModel)]="lastName"
+             placeholder="lastName"
+             class="form-control"
+             id="lastname"/>
+    </div>
 
-  <input [(ngModel)]="email"
-         placeholder="email"
-         class="form-control"/>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input [(ngModel)]="email"
+             placeholder="email"
+             class="form-control"
+             id="email"/>
+    </div>
 
-  <button (click)="update()"
-          class="btn btn-primary btn-block">
-    Update
-  </button>
+    <button (click)="update()"
+            class="btn btn-primary btn-block">
+      Update
+    </button>
+  </div>
 
-  <h2>Sections ({{sections.length}})</h2>
+  <div class="dropdown-divider"></div>
+
+  <h2>Enrolled Sections</h2>
 
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
@@ -31,7 +52,16 @@
     </li>
   </ul>
 
-  <a (click)="logout()">Logout</a>
-  <a routerLink="/home">Home</a>
+  <div class="dropdown-divider"></div>
+
+  <button  routerLink="/home"
+           class="btn btn-primary btn">
+    Home
+  </button>
+  <button  (click)="logout()"
+           class="btn btn-danger btn float-right">
+    Logout
+  </button>
+
 
 </div>

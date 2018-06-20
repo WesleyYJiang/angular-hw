@@ -14,9 +14,16 @@ export class LoginComponent implements OnInit {
   login(username, password) {
     this.service
       .login(username, password)
-      .then(() => {
-        this.router.navigate(['profile']);
-      });
+      .then((response) => response.json()
+            .then((r) => {
+              if (r == null) {
+                alert('Wrong credentials! Try Again!');
+              } else {
+                this.router.navigate(['profile']);
+              }
+            })
+        // , () => alert('Wrong credentials! Try Again!')
+      );
   }
 
   constructor(private router: Router, private service: UserServiceClient) { }
