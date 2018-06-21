@@ -25,6 +25,26 @@ export class SectionServiceClient {
     });
   }
 
+  deleteSection(sectionId) {
+    const url = 'https://webdev-node-hw.herokuapp.com/api/section/' + sectionId;
+    return fetch(url, {
+      method: 'delete',
+      credentials: 'include'
+    });
+  }
+
+  updateSection(sectionId, section) {
+    const url = 'https://webdev-node-hw.herokuapp.com/api/section/update/' + sectionId;
+    return fetch(url, {
+      method: 'post',
+      body: JSON.stringify(section),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
+
   findSectionsForCourse(courseId) {
     return fetch(this.REMOTE_URL.replace('COURSEID', courseId))
       .then(response => response.json());

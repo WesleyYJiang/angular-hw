@@ -26,10 +26,10 @@
 
         <input [(ngModel)]="changeSeats" placeholder={{section.seats}} class="form-control">
 
-        <button (click)="enroll(section)"
+        <button (click)="deleteSection(section, course.id)"
                 class="float-right btn btn-primary">Update
         </button>
-        <button (click)="enroll(section)"
+        <button (click)="updateSection(section.id, course.id)"
                 class="float-right btn btn-danger">Delete
         </button>
       </li>

@@ -25,6 +25,18 @@ export class AdminPageComponent implements OnInit {
     alert(courseId);
   }
 
+  deleteSection(sectionId, courseId) {
+    this.sectionService.deleteSection(sectionId)
+      .then(() => this.loadSections(courseId));
+  }
+
+  updateSection(sectionId, section, courseid) {
+    this.sectionService.updateSection(sectionId, section)
+      .then(() => {
+        this.loadSections(courseid);
+      });
+  }
+
   createSection(sectionName, seats, courseid) {
     this
       .sectionService
