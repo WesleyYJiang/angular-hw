@@ -22,6 +22,20 @@ export class AdminPageComponent implements OnInit {
       .then(sections => this.sections = sections);
   }
 
+  createSection(sectionName, seats, courseid) {
+    this
+      .sectionService
+      .createSection(courseid, sectionName, seats)
+      .then(() => {
+        this.loadSections(courseid);
+      });
+  }
+  loadSections(courseId) {
+    // this.courseId = courseId;
+    this.sectionService
+      .findSectionsForCourse(courseId)
+      .then(sections => this.sections = sections);
+  }
   ngOnInit() {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
