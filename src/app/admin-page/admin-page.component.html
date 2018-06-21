@@ -10,7 +10,7 @@
   Home
 </button>
 
-<div class="row">
+<div class="row mt-5">
 
   <div *ngFor="let course of courses" class="col-sm-3">
 
@@ -20,7 +20,7 @@
       </li>
       <!--{{findSectionsForCourse(course.id)}}-->
 
-      <li *ngFor="let section of sections" class="list-group-item">
+      <li *ngFor="let section of sections[course.id]" class="list-group-item">
 
         {{section.name}} {{section.seats}}
 
@@ -32,7 +32,6 @@
         </button>
       </li>
 
-      <div class="dropdown-divider"></div>
       <li class="list-group-item">
         <input [(ngModel)]="sectionName" placeholder="Section Name" class="form-control">
 
