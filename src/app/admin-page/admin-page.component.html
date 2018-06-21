@@ -18,9 +18,7 @@
       <li class="list-group-item">
         <h4>{{course.title}}</h4>
       </li>
-      {{findSectionsForCourse(course.id)}}
-
-      <li *ngFor="let section of sections" class="list-group-item">
+      <li *ngFor="let section of sections[courseId]" class="list-group-item">
 
         <input [(ngModel)]="changeName" placeholder={{section.name}} class="form-control">
 

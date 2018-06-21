@@ -15,15 +15,10 @@ export class AdminPageComponent implements OnInit {
   sectionName = '';
   seats = '';
   courseId = '';
-  sections = [];
+  sections = {};
   changeName = '';
   changeSeats = '';
-
-  findSectionsForCourse(courseId) {
-    // this.sectionService.findSectionsForCourse(courseId)
-    //   .then(sections => sections);
-    alert(courseId);
-  }
+  s = {};
 
   deleteSection(sectionId, courseId) {
     this.sectionService.deleteSection(sectionId)
@@ -55,11 +50,15 @@ export class AdminPageComponent implements OnInit {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
 
-    this.sectionService.findSectionsForCourse(1).then(sections => this.sections = sections);
+    // this.sectionService.findSectionsForCourse(1).then(sections => this.sections = sections);
 
-    // this.sections = this.courses.map((course) => {
-    //   return this.findSectionsForCourse(course.id);
-    // });
+    this.sections = this.courses.map((course) => {
+      const CID = course.id;
+      this.sectionService.findSectionsForCourse(course.id).then(sections => this.s = sections);
+      let obj = {};
+      obj[CID] = this.s;
+      return obj;
+    });
 
   }
 
