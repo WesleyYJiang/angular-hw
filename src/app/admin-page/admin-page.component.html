@@ -18,13 +18,13 @@
       <li class="list-group-item">
         <h4>{{course.title}}</h4>
       </li>
-      <li *ngFor="let section of sections[courseId]" class="list-group-item">
+      <li *ngFor="let section of sections" class="list-group-item">
 
         <input [(ngModel)]="changeName" placeholder={{section.name}} class="form-control">
 
         <input [(ngModel)]="changeSeats" placeholder={{section.seats}} class="form-control">
 
-        <button (click)="deleteSection(section, course.id)"
+        <button (click)="deleteSection(sectio.id, course.id)"
                 class="float-right btn btn-primary">Update
         </button>
         <button (click)="updateSection(section.id, course.id)"

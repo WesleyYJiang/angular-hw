@@ -25,8 +25,8 @@ export class AdminPageComponent implements OnInit {
       .then(() => this.loadSections(courseId));
   }
 
-  updateSection(sectionId, section, courseid) {
-    this.sectionService.updateSection(sectionId, section)
+  updateSection(sectionId, courseid) {
+    this.sectionService.updateSection(sectionId, this.changeName, this.changeSeats)
       .then(() => {
         this.loadSections(courseid);
       });
@@ -44,21 +44,21 @@ export class AdminPageComponent implements OnInit {
     // this.courseId = courseId;
     this.sectionService
       .findSectionsForCourse(courseId)
-      .then(sections => this.sections[courseId] = sections);
+      .then(sections => this.sections = sections);
   }
   ngOnInit() {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
 
-    // this.sectionService.findSectionsForCourse(1).then(sections => this.sections = sections);
+    this.sectionService.findSectionsForCourse(1).then(sections => this.sections = sections);
 
-    this.sections = this.courses.map((course) => {
-      const CID = course.id;
-      this.sectionService.findSectionsForCourse(course.id).then(sections => this.s = sections);
-      let obj = {};
-      obj[CID] = this.s;
-      return obj;
-    });
+    // this.sections = this.courses.map((course) => {
+    //   const CID = course.id;
+    //   this.sectionService.findSectionsForCourse(course.id).then(sections => this.s = sections);
+    //   let obj = {};
+    //   obj[CID] = this.s;
+    //   return obj;
+    // });
 
   }
 

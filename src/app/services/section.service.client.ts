@@ -33,7 +33,8 @@ export class SectionServiceClient {
     });
   }
 
-  updateSection(sectionId, section) {
+  updateSection(sectionId, name, seats) {
+    const section = {sectionId, name, seats};
     const url = 'https://webdev-node-hw.herokuapp.com/api/section/update/' + sectionId;
     return fetch(url, {
       method: 'post',
