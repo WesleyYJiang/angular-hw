@@ -20,9 +20,11 @@
       </li>
       {{findSectionsForCourse(course.id)}}
 
-      <li *ngFor="let section of sections[course.id]" class="list-group-item">
+      <li *ngFor="let section of sections" class="list-group-item">
 
-        {{section.name}} {{section.seats}}
+        <input [(ngModel)]="changeName" placeholder={{section.name}} class="form-control">
+
+        <input [(ngModel)]="changeSeats" placeholder={{section.seats}} class="form-control">
 
         <button (click)="enroll(section)"
                 class="float-right btn btn-primary">Update

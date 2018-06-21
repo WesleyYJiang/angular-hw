@@ -16,6 +16,8 @@ export class AdminPageComponent implements OnInit {
   seats = '';
   courseId = '';
   sections = [];
+  changeName = '';
+  changeSeats = '';
 
   findSectionsForCourse(courseId) {
     // this.sectionService.findSectionsForCourse(courseId)
