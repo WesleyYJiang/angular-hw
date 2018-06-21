@@ -18,8 +18,9 @@ export class AdminPageComponent implements OnInit {
   sections = [];
 
   findSectionsForCourse(courseId) {
-    this.sectionService.findSectionsForCourse(courseId)
-      .then(sections => sections);
+    // this.sectionService.findSectionsForCourse(courseId)
+    //   .then(sections => sections);
+    alert(courseId);
   }
 
   createSection(sectionName, seats, courseid) {
@@ -34,15 +35,17 @@ export class AdminPageComponent implements OnInit {
     // this.courseId = courseId;
     this.sectionService
       .findSectionsForCourse(courseId)
-      .then(sections => this.sections = sections);
+      .then(sections => this.sections[courseId] = sections);
   }
   ngOnInit() {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
 
-    this.sections = this.courses.map((course) => {
-      return this.findSectionsForCourse(course.id);
-    });
+    this.sectionService.findSectionsForCourse(1).then(sections => this.sections = sections);
+
+    // this.sections = this.courses.map((course) => {
+    //   return this.findSectionsForCourse(course.id);
+    // });
 
   }
 
